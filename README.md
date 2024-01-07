@@ -51,14 +51,18 @@ Plotly.newPlot( plotDiv,
 
 ### Setup (backend)
 
-*Warning:* The JSON data produced by the server must follow the Plotly `restyle` convention:
+*Warning:* The JSON data produced by the server must follow the Plotly `restyle` convention,
+see https://github.com/plotly/plotly.js/issues/167#issuecomment-169720617  
 
+e.g. in `express.js` , if `xData` and `yData` are arrays of numbers, the returned object must have
+nested arrays as values :
 ```javascript
-// NB : nested arrays for restyle() syntax ! see https://github.com/plotly/plotly.js/issues/167#issuecomment-169720617 
+// NB : 
 obj = {
-    x: [x],
-    y: [y]
+    x: [xData],
+    y: [yData]
     }
+res.send(obj)
 ```
 
 ## Tested with
