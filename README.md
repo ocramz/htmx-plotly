@@ -11,7 +11,7 @@ Simple dashboards and data apps, etc.
 ### Installation
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.1/htmx-plotly.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.1/htmx-plotly.js" integrity="sha256-jPyGR/Ll6Vkxkef+ATkyCoqduaTA6e3r57lvOxlZmxU=" crossorigin="anonymous"></script>
 ```
 
 
