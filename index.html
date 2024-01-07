@@ -8,7 +8,16 @@
 <body>
 
 
-<a href="#" hx-ext="htmx-plotly" hx-post="/get-data" hx-swap="none" plot-id="my-plot"><h1>UPDATE</h1></a>
+<!-- <a href="#" hx-ext="htmx-plotly" hx-post="/get-data" hx-swap="none" plot-id="my-plot"><h1>UPDATE</h1></a> -->
+
+<form action="#" hx-ext="htmx-plotly" hx-post="/get-data" hx-swap="none" plot-id="my-plot">
+    <select name="veggies">
+        <option value="potatoes">potatoes</option>
+        <option value="carrots">carrots</option>
+        <option value="broccoli">broccoli</option>
+    </select>
+    <input type="submit" value="Submit"/>
+</form>
 
 <div id="my-plot"></div>
 
