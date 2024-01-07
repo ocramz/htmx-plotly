@@ -4,9 +4,7 @@
 An [htmx](https://htmx.org) [extension](https://htmx.org/extensions/) to update ("restyle") [plotly.js](https://plotly.com/javascript/) plots.
 This approach is much faster than recreating the whole plot, but since HTMX natively receives HTML from the server, we need this extension to receive JSON with the new plot data instead, and trigger Plotly to re-render.
 
-## Applications
-
-Simple dashboards, data apps, etc.
+Possible applications include: simple dashboards, data apps, and similar.
 
 ### Installation
 
