@@ -8,10 +8,9 @@
 <body>
 
 
-<div hx-ext="htmx-plotly">
-    <a href="#" hx-post="/get-data" hx-swap="none" plot-id="my-plot"><h1>UPDATE</h1></a>
-    <div id="my-plot"></div>
-</div>
+<a href="#" hx-ext="htmx-plotly" hx-post="/get-data" hx-swap="none" plot-id="my-plot"><h1>UPDATE</h1></a>
+
+<div id="my-plot"></div>
 
 
 <script>
