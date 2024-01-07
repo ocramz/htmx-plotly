@@ -18,12 +18,14 @@ app.get('/', (req, res) => {
 app.post('/get-data', (req, res) => {
     const n = 3;
     const x = Array.from({length: n}, (_, i) => i );
-    const y = Array.from({length: n}, () => Math.random() );
-    obj = [{
-        x: x,
-        y: y
-    }]
-    console.log(JSON.stringify(obj)) // debug
+    const y = Array.from({length: n}, () => Math.floor(Math.random() * 10) );
+    // NB : nested arrays for restyle() syntax ! see https://github.com/plotly/plotly.js/issues/167#issuecomment-169720617 
+    obj = {
+        x: [x],
+        y: [y]
+    }
+
+    // console.log(JSON.stringify(obj)) // debug
     res.send(obj)
 })
 

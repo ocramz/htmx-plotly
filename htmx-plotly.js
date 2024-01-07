@@ -3,12 +3,12 @@
 htmx.defineExtension('htmx-plotly', {
     transformResponse : (text, xhr, elt) => {
 
-        const dataCurr = window['plotlyTestData']
+        // const dataCurr = window['plotlyTestData']
         // console.log('htmx-plotly: plotlyTestData:' + JSON.stringify(dataCurr) ) // debug
 
         const dataNew = JSON.parse(text)
         // console.log('htmx-plotly: new data: ' + JSON.stringify(dataNew))
-        window['plotlyTestData'] = dataNew
+        // window['plotlyTestData'] = dataNew
         Plotly.restyle('my-plot', dataNew);
 
         return ''
