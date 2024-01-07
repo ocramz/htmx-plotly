@@ -22,15 +22,15 @@ Add these attributes to a page element:
 * `hx-swap="none"` don't mutate the DOM with the result (we need to call the Plotly API instead)
 * `plot-id="my-plot"` ID of the DOM element that hosts the Plotly chart.
 
-Example: here we make an `<a>` text link trigger the chart update:
+Example: here we make an `<a>` text link trigger the update of the plot within element `my-plot`:
 
 ```html
 <a href="#" hx-ext="htmx-plotly" hx-post="/get-data" hx-swap="none" plot-id="my-plot"><h1>UPDATE</h1></a>
 ```
 
-### Setup
+### Setup (frontend)
 
-Plotly needs an empty div element as well as a script tag to initialize its plot
+Plotly charts need an empty div element as well as a script tag for initialization:
 
 ```html
 <div id="my-plot"></div>
@@ -49,6 +49,17 @@ Plotly.newPlot( plotDiv,
 </script>
 ```
 
+### Setup (backend)
+
+*Warning:* The JSON data produced by the server must follow the Plotly `restyle` convention:
+
+```javascript
+// NB : nested arrays for restyle() syntax ! see https://github.com/plotly/plotly.js/issues/167#issuecomment-169720617 
+obj = {
+    x: [x],
+    y: [y]
+    }
+```
 
 ## Tested with
 
