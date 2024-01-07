@@ -57,7 +57,7 @@ see https://github.com/plotly/plotly.js/issues/167#issuecomment-169720617
 e.g. in `express.js` , if `xData` and `yData` are arrays of numbers, the returned object must have
 nested arrays as values :
 ```javascript
-// NB : 
+// NB obj will be passed verbatim to Plotly.js on the frontend
 obj = {
     x: [xData],
     y: [yData]
