@@ -74,7 +74,7 @@ obj = {
 res.send(obj)
 ```
 
-* Since v0.2: use [`plotly_utils.py`](https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.2/plotly_utils.py) to convert between Plotly objects and restyle-friendly JSON.:
+* Since v0.2: use [`plotly_utils.py`](https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.3/plotly_utils.py) to convert between Plotly objects and restyle-friendly JSON.:
 
 
 ## Tested with
