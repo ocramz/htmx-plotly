@@ -24,7 +24,7 @@ def getData():
     # w['x'] = [w['x']]  # the .restyle() nested array bs
     # w['y'] = [w['y']]
     w = plotlyToRestyle(x)
-    # print(f'.restyle data: {w}')
+    print(f'.restyle data: {w}')
     return make_response(w)
 
 if __name__ == "__main__":

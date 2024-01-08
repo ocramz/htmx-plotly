@@ -11,8 +11,7 @@ Possible applications include: simple dashboards, data apps, and similar.
 Load the script from CDN into the head of your HTML file:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.1/htmx-plotly.js" integrity="sha256-jPyGR/Ll6Vkxkef+ATkyCoqduaTA6e3r57lvOxlZmxU=" crossorigin="anonymous"></script>
-```
+<script src="https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.2/htmx-plotly.js" integrity="sha256-0lbEDYe4H+Z2f/YMKEgbTnyvT2Wa837+a+D7XaPcKIo=" crossorigin="anonymous"></script>```
 
 and of course also HTMX and Plotly:
 
@@ -71,6 +70,8 @@ obj = {
     }
 res.send(obj)
 ```
+
+* Since v0.2: use `plotly_utils.py` to convert between Plotly objects and restyle-friendly JSON.
 
 ## Tested with
 
