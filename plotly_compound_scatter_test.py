@@ -7,6 +7,8 @@ def irisScatter1():
     # Load data, make figure.
     df = px.data.iris()
     fig = px.scatter(df, x="sepal_width", y="sepal_length")
+    # print(f'type(fig): {type(fig)}')
+    # print(f'{fig.data}')
     trace = next(fig.select_traces())
 
     # Set default point styles.
@@ -29,4 +31,9 @@ def irisScatter1():
     # Alternatively, call:
     fig.update_traces(marker=dict(color=color, size=size, symbol=symbol))
 
-    return fig.to_json()
+    # json_ = fig.to_json()
+    # print(f'JSON: {json_}')
+    # return fig.to_json()
+
+    # print(f'{fig.data}')
+    return fig
