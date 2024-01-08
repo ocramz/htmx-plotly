@@ -12,6 +12,7 @@ Load the script from CDN into the head of your HTML file:
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.2/htmx-plotly.js" integrity="sha256-0lbEDYe4H+Z2f/YMKEgbTnyvT2Wa837+a+D7XaPcKIo=" crossorigin="anonymous"></script>```
+```
 
 and of course also HTMX and Plotly:
 
