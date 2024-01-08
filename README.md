@@ -11,7 +11,7 @@ Possible applications include: simple dashboards, data apps, and similar.
 Load the script from CDN into the head of your HTML file:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.2/htmx-plotly.js" integrity="sha256-0lbEDYe4H+Z2f/YMKEgbTnyvT2Wa837+a+D7XaPcKIo=" crossorigin="anonymous"></script>```
+
 ```
 
 and of course also HTMX and Plotly:
@@ -26,14 +26,16 @@ and of course also HTMX and Plotly:
 Add these attributes to a page element: 
 * `hx-ext="htmx-plotly"` means this element uses the extension
 * `hx-post="/get-data"` the HTTP endpoint that returns the new plot data
-* `hx-swap="none"` don't mutate the DOM with the result (we need to call the Plotly API instead)
 * `plot-id="my-plot"` ID of the DOM element that hosts the Plotly chart.
 
 Example: here we make an `<a>` text link trigger the update of the plot within element `my-plot`:
 
 ```html
-<a href="#" hx-ext="htmx-plotly" hx-post="/get-data" hx-swap="none" plot-id="my-plot"><h1>UPDATE</h1></a>
+<a href="#" hx-ext="htmx-plotly" hx-post="/get-data" plot-id="my-plot"><h1>UPDATE</h1></a>
 ```
+
+NB: As of `v0.3` the HTMX swap mechanism works once more as expected: this extension now receives an *object* from the server, which
+is unpacked into Plotly restyle data and HTML markup.
 
 ### Setup (frontend)
 

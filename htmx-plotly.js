@@ -1,5 +1,11 @@
 // adapted from https://unpkg.com/htmx.org@1.9.10/dist/ext/client-side-templates.js 
 
+function htmlUnescape(input) {
+  // // HTML-in-JSON should be escaped on the wire, and decoded safely here with DOMParser to avoid XSS
+  var doc = new DOMParser().parseFromString(input, "text/html");
+  return doc.documentElement.textContent
+}
+
 htmx.defineExtension('htmx-plotly', {
     transformResponse : (text, xhr, elt) => {
 
@@ -7,9 +13,11 @@ htmx.defineExtension('htmx-plotly', {
         const pedantic = false
 
         var plotEl = htmx.closest(elt, "[plot-id]"); // closest including div element
+        const payload = JSON.parse(text)
+        const dataNew = payload['restyle_data']
+        n = dataNew.length
+        const markup = htmlUnescape(payload['markup'])  // to be passed back to HTMX for swapping
         if (plotEl) {
-            const dataNew = JSON.parse(text)
-            n = dataNew.length
             const plotId = plotEl.getAttribute('plot-id');  // lookup value of ? in < .. plot-id="?">
             var plotDiv = htmx.find("#" + plotId); // div element pointed at
             if (plotDiv) {
@@ -31,7 +39,7 @@ htmx.defineExtension('htmx-plotly', {
             console.log('No plot-id attribute defined')
         }
 
-        return ''
+        return markup
 
     }
 }

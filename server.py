@@ -1,8 +1,8 @@
 
 from flask import Flask, request, send_file, make_response
-import json
-from markupsafe import Markup, escape
-import jsonpickle
+# import json
+# from markupsafe import Markup, escape
+# import jsonpickle
 from plotly_utils import plotlyToRestyle
 
 from plotly_compound_scatter_test import irisScatter1
@@ -19,11 +19,7 @@ def getData():
     # return f'Hello, {escape(name)}!'
     x = irisScatter1()
 
-    # z = x.to_json() # .to_json() is Plotly implem
-    # w = json.loads(z)['data'][0]  # parse back into dict and extract data
-    # w['x'] = [w['x']]  # the .restyle() nested array bs
-    # w['y'] = [w['y']]
-    w = plotlyToRestyle(x)
+    w = plotlyToRestyle(x, '<b>It wOrKs</b>')
     print(f'.restyle data: {w}')
     return make_response(w)
 
