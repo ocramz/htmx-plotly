@@ -11,7 +11,7 @@ Possible applications include: simple dashboards, data apps, and similar.
 Load the script from CDN into the head of your HTML file:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.3/htmx-plotly.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.4/htmx-plotly.js"></script>
 ```
 
 and of course also HTMX and Plotly:
@@ -60,21 +60,12 @@ Plotly.newPlot( plotDiv,
 
 ### Setup (backend)
 
-*Warning:* The JSON data produced by the server must follow the Plotly `restyle` convention,
-see https://github.com/plotly/plotly.js/issues/167#issuecomment-169720617  
+*Warning:* The JSON data produced by the server must follow the Plotly 
+[`newPlot` calling signature](https://plotly.com/javascript/plotlyjs-function-reference/#plotlynewplot):
+the object must contain the `data` key (and optionally `layout`, `config` and `frames` keys)
 
-e.g. in `express.js` , if `xData` and `yData` are arrays of numbers, the returned object must have
-nested arrays as values :
-```javascript
-// NB obj will be passed verbatim to Plotly.js on the frontend
-obj = {
-    x: [xData],
-    y: [yData]
-    }
-res.send(obj)
-```
-
-* Since v0.2: use [`plotly_utils.py`](https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.3/plotly_utils.py) to convert between Plotly objects and restyle-friendly JSON.:
+* Since v0.4: use [`plotly_htmx_utils.py`](https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.4/plotly_htmx_utils.py) 
+  to convert between Plotly objects and restyle-friendly JSON.:
 
 
 ## Tested with
