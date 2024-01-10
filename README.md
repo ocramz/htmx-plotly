@@ -11,7 +11,7 @@ Possible applications include: simple dashboards, data apps, and similar.
 Load the script from CDN into the head of your HTML file:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.4/htmx-plotly.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.4/htmx-plotly.js" integrity="sha256-FgvTlDVvVXn0uoRXC9MLfkxAsu9AOoGMxFRwc7If9Cg=" crossorigin="anonymous"></script>
 ```
 
 and of course also HTMX and Plotly:
