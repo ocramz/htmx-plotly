@@ -1,3 +1,8 @@
+# 0.4
+
+* Use `Plotly.newPlot()` instead of `Plotly.restyle()` because I cannot get restyle() to work with plots that contain 
+multiple traces
+
 # 0.3
 
 * the HTMX swap mechanism works once more as expected: this extension now receives an *object* from the server, which

@@ -20,7 +20,7 @@ def getData():
     x = irisScatter1()
 
     w = plotlyToJSON(x, '<b>It wOrKs</b>')
-    print(f'.restyle data: {w}')
+    # print(f'.restyle data: {w}')
     return make_response(w)
 
 if __name__ == "__main__":
