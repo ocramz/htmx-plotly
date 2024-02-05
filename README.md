@@ -8,17 +8,17 @@ Possible applications include: simple dashboards, data apps, and similar.
 
 ### Installation
 
-Load the script from CDN into the head of your HTML file:
-
-```html
-<script src="https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.4/htmx-plotly.js" integrity="sha256-FgvTlDVvVXn0uoRXC9MLfkxAsu9AOoGMxFRwc7If9Cg=" crossorigin="anonymous"></script>
-```
-
-and of course also HTMX and Plotly:
+First load HTMX and Plotly in the `<head>` of your file:
 
 ```html
 <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
 <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+```
+
+And right after, load `htmx-plotly`: 
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/ocramz/htmx-plotly@0.4/htmx-plotly.js" integrity="sha256-FgvTlDVvVXn0uoRXC9MLfkxAsu9AOoGMxFRwc7If9Cg=" crossorigin="anonymous"></script>
 ```
 
 ### Usage
